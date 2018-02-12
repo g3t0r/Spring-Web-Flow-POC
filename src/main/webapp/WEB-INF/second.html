@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:tiles="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org"
+      lang="pl">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Drugi</title>
+</head>
+<body>
+    <h1>Zarejestruj swoją firmę</h1>
+    <form action="#" th:object="${firm}" th:action="${flowExecutionUrl}" method="post">
+        <input type="text" th:field="*{address}"/> Podaj adres
+        <br/>
+        <input type="number" th:field="*{phoneNumber}"/> Podaj numer telefonu
+        <br/>
+        <button type="submit"  name="_eventId_next">Dalej</button>
+        <button type="submit" id="previous" name="_eventId_previous">Wstecz</button>
+    </form>
+
+
+</body>
+</html>

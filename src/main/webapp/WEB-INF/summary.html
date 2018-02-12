@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:tiles="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org"
+      lang="pl">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Podsumowanie</title>
+</head>
+<body th:object="${firm}">
+    Nazwa firmy: <label th:text="*{firmName}"/><br/>
+    Adres email: <label th:text="*{email}"/><br/>
+    Adres: <label th:text="*{email}"/><br/>
+    Numer telefonu: <label th:text="*{phoneNumber}"/><br/>
+    Miesięczne wynagrodzenie: <label th:text="*{monthlySalary}"/><br/>
+    <form action="#" th:action="${flowExecutionUrl}" method="post">
+        <button type="submit" id="previous" name="_eventId_previous">Wstecz</button>
+        <button type="submit" id="finish" name="_eventId_finish">Koniec</button>
+    </form>
+</body>
+</html>

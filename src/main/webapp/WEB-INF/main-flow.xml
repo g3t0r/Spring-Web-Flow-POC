@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="
+      	http://www.springframework.org/schema/webflow
+      	http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+    <on-start>
+        <evaluate expression="firmService.createFirm()" result="flowScope.firm"/>
+    </on-start>
+
+    <view-state id="first" model="firm" >
+        <binder>
+            <binding property="firmName"/>
+            <binding property="monthlySalary"/>
+            <binding property="email"/>
+        </binder>
+        <transition on="next" to="second"/>
+    </view-state>
+
+    <view-state id="second" model="firm">
+        <binder>
+            <binding property="phoneNumber"/>
+            <binding property="address"/>
+        </binder>
+        <transition on="next" to="summary"/>
+        <transition on="previous" to="first"/>
+    </view-state>
+
+    <view-state id="summary" model="firm">
+        <binder>
+            <binding property="firmName"/>
+            <binding property="monthlySalary"/>
+            <binding property="email"/>
+            <binding property="phoneNumber"/>
+            <binding property="address"/>
+        </binder>
+        <transition on="finish" to="finish"/>
+        <transition on="previous" to="second"/>
+    </view-state>
+
+    <end-state id="finish">
+
+    </end-state>
+
+</flow>
