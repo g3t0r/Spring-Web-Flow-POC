@@ -46,14 +46,6 @@ public class FlowWebConfig extends AbstractFlowConfiguration
     }
     
     @Bean
-    public FlowBuilderServices flowBuilderServices()
-    {
-        return getFlowBuilderServicesBuilder()
-            .setViewFactoryCreator(mvcViewFactoryCreator())
-            .build();
-    }
-    
-    @Bean
     public MvcViewFactoryCreator mvcViewFactoryCreator()
     {
         MvcViewFactoryCreator viewFactoryCreator = new MvcViewFactoryCreator();
@@ -61,5 +53,15 @@ public class FlowWebConfig extends AbstractFlowConfiguration
         viewFactoryCreator.setUseSpringBeanBinding(true);
         return viewFactoryCreator;
     }
+    
+    @Bean
+    public FlowBuilderServices flowBuilderServices()
+    {
+        return getFlowBuilderServicesBuilder()
+            .setViewFactoryCreator(mvcViewFactoryCreator())
+            .build();
+    }
+    
+    
     
 }

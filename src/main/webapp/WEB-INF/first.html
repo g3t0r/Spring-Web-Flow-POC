@@ -10,6 +10,7 @@
 </head>
 <body>
     <h1>Zarejestruj swoją firmę</h1>
+    <!--${flowExecutionUrl} powoduje przejście do kolejnego etapu flow-->
     <form action="#" th:object="${firm}" th:action="${flowExecutionUrl}" method="post">
         <input type="text" th:field="*{firmName}"/> Podaj nazwę firmy
         <br/>

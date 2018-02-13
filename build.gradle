@@ -26,9 +26,7 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	compile 'org.springframework.webflow:spring-webflow:2.4.5.RELEASE'
-	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-tiles2-spring4', version: '2.1.1.RELEASE'
-	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-conditionalcomments', version: '2.1.2.RELEASE'
+	compile('org.springframework.webflow:spring-webflow:2.4.5.RELEASE')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

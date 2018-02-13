@@ -6,15 +6,20 @@
       	http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
     <on-start>
+        <!--Pobiera instancję Firm za pomocą serwisu, wrzuca do flowScope jako atrybut firm-->
         <evaluate expression="firmService.createFirm()" result="flowScope.firm"/>
     </on-start>
 
+    <!--Wyszukuje widok na podstawie jego nazwy,
+        widoki powinny być w tej samej lokacji co flow-->
     <view-state id="first" model="firm" >
         <binder>
             <binding property="firmName"/>
             <binding property="monthlySalary"/>
             <binding property="email"/>
         </binder>
+        <!--W widoku jest przycisk z ustawionym name="_eventId_next",
+            flow rozpoznaje go przez usunięcie "_eventId_"-->
         <transition on="next" to="second"/>
     </view-state>
 
@@ -39,8 +44,10 @@
         <transition on="previous" to="second"/>
     </view-state>
 
-    <end-state id="finish">
+    <!--Instrukcje wykonywane po zakończeniu flow
+        są zdefiniowane w klasie MainFlowHandler,
+        w metodzie handleExecutionOutcome-->
+    <end-state id="finish"/>
 
-    </end-state>
 
 </flow>

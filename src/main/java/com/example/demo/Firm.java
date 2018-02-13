@@ -10,23 +10,9 @@ public class Firm implements Serializable
     private String address;
     private String email;
     
-    public Firm(int monthlySalary, int phoneNumber, String firmName, String address, String email)
-    {
-        this.monthlySalary = monthlySalary;
-        this.phoneNumber = phoneNumber;
-        this.firmName = firmName;
-        this.address = address;
-        this.email = email;
-    }
     
     public Firm()
-    {
-        this.monthlySalary = 0;
-        this.phoneNumber = 0;
-        this.firmName = "Unknown";
-        this.address = "Unknown";
-        this.email = "Unknown";
-    }
+    {}
     
     public int getMonthlySalary()
     {
